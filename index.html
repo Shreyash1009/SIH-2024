@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Chatbot Ticketing System</title>
+</head>
+<body>
+    <div class="corner-images">
+        <img src="FRONTEND/IMAGES/Top-left.jpeg" class="corner-image top-left" alt="Corner Image">
+        <img src="FRONTEND/IMAGES/Top-right.jpeg" class="corner-image top-right" alt="Corner Image">
+        <img src="FRONTEND/IMAGES/bottom-left.jpg" class="corner-image bottom-left" alt="Corner Image">
+        <img src="FRONTEND/IMAGES/bottom-right.jpg" class="corner-image bottom-right" alt="Corner Image">
+    </div>
+
+    <div class="chat-container">
+        <div class="language-selection">
+            <label for="language">Select Language:</label>
+            <select id="language">
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Marathi">Marathi</option>
+            </select>
+        </div>
+        <div class="chat-header">
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+        </div>
+        <div class="chat-box">
+            <div class="messages" id="messages">
+                <div class="typing-indicator" id="typingIndicator">Typing...</div>
+            </div>
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Type your message here...">
+                <button id="sendButton">Send</button>
+                <button id="clearButton">Clear</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

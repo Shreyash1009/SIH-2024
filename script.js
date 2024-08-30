@@ -11,9 +11,12 @@ const languageSelection = document.querySelector(".language-selection");
 const chatHeader = document.querySelector(".chat-header");
 const messages = document.querySelector(".messages");
 const footer = document.querySelector(".footer");
-
 const slides = document.querySelectorAll(".slide");
+
 let currentSlide = 0;
+const tooltip = document.createElement("div");
+tooltip.className = "image-tooltip";
+document.body.appendChild(tooltip);
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
@@ -28,7 +31,7 @@ function nextSlide() {
 
 function startSlideshow() {
     showSlide(currentSlide);
-    setInterval(nextSlide, 3000); 
+    setInterval(nextSlide, 3000);
 }
 
 startSlideshow();
@@ -96,3 +99,27 @@ sendButton.addEventListener("click", handleSend);
 clearButton.addEventListener("click", handleClear);
 languageSelect.addEventListener("change", handleLanguageChange);
 darkModeToggle.addEventListener("click", toggleDarkMode);
+
+slides.forEach(slide => {
+    slide.addEventListener("mouseenter", (e) => {
+        const cityInfo = slide.getAttribute("data-city");
+        tooltip.innerText = cityInfo;
+        tooltip.style.left = `${e.pageX + 10}px`;
+        tooltip.style.top = `${e.pageY + 10}px`;
+        tooltip.style.opacity = "1";
+        tooltip.style.background = "rgba(255, 255, 255, 0.9)"; 
+        tooltip.style.color = "#000";
+        tooltip.style.padding = "5px 10px"; 
+        tooltip.style.borderRadius = "5px"; 
+        tooltip.style.boxShadow = "0 0 10px rgba(0, 0, 0, 0.1)"; 
+    });
+
+    slide.addEventListener("mousemove", (e) => {
+        tooltip.style.left = `${e.pageX + 10}px`;
+        tooltip.style.top = `${e.pageY + 10}px`;
+    });
+
+    slide.addEventListener("mouseleave", () => {
+        tooltip.style.opacity = "0";
+    });
+});

@@ -12,7 +12,6 @@ const chatHeader = document.querySelector(".chat-header");
 const messages = document.querySelector(".messages");
 const footer = document.querySelector(".footer");
 
-// Slideshow functionality
 const slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
 
@@ -29,13 +28,11 @@ function nextSlide() {
 
 function startSlideshow() {
     showSlide(currentSlide);
-    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    setInterval(nextSlide, 3000); 
 }
 
-// Start the slideshow
 startSlideshow();
 
-// Function to add message
 function addMessage(content, className) {
     const message = document.createElement("div");
     message.className = `message ${className}`;
@@ -46,7 +43,6 @@ function addMessage(content, className) {
     typingIndicator.style.display = "none";
 }
 
-// Function to handle send button click
 function handleSend() {
     const userText = userInput.value.trim();
 
@@ -62,12 +58,10 @@ function handleSend() {
     }
 }
 
-// Function to handle clear button click
 function handleClear() {
     messagesContainer.innerHTML = "";
 }
 
-// Function to handle language change
 function handleLanguageChange() {
     const selectedLanguage = languageSelect.value;
     const greetings = {
@@ -79,7 +73,6 @@ function handleLanguageChange() {
     changeBackgroundColor(selectedLanguage);
 }
 
-// Function to toggle dark mode
 function toggleDarkMode() {
     pageContainer.classList.toggle("dark-mode");
     chatContainer.classList.toggle("dark-mode");
@@ -89,7 +82,6 @@ function toggleDarkMode() {
     footer.classList.toggle("dark-mode");
 }
 
-// Function to change background color based on language selection
 function changeBackgroundColor(language) {
     if (language === "English") {
         chatContainer.style.background = "linear-gradient(145deg, #ffffff, #f0f0f0, #fdf4a2, #fadadd)";
@@ -100,7 +92,6 @@ function changeBackgroundColor(language) {
     }
 }
 
-// Event listeners
 sendButton.addEventListener("click", handleSend);
 clearButton.addEventListener("click", handleClear);
 languageSelect.addEventListener("change", handleLanguageChange);

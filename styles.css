@@ -15,7 +15,7 @@ body {
     justify-content: space-between;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(145deg, #151515, #3e1361, #e015dd, #eb1ea3 , rgb(220, 144, 202));
+    background: linear-gradient(to right, #000000, #2f4f4f, #008080,rgb(37, 176, 169),rgb(114, 206, 206));
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -170,7 +170,7 @@ button:hover {
     width: 100%;
     text-align: center;
     padding: 20px;
-    background: linear-gradient(145deg, #151515, #3e1361, #e015dd, #eb1ea3, rgb(220, 144, 202));
+    background: #3f3838;
     color: #fff;
     margin-top: 20px;
 }
